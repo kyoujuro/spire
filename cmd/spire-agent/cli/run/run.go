@@ -189,7 +189,7 @@ func (cmd *Command) Run(args []string) int {
 
 	err = a.Run(ctx)
 	if err != nil {
-		c.Log.WithError(err).Error("agent crashed")
+		c.Log.WithError(err).Error("Agent crashed")
 		return 1
 	}
 
@@ -417,7 +417,7 @@ func NewAgentConfig(c *Config, logOptions []log.Option, allowUnknownConfig bool)
 
 	// TODO: remove deprecated configurable in 0.12.0
 	if c.Agent.DeprecatedEnableSDS != nil {
-		ac.Log.Warn("SDS support is now always on. The enable_sds configurable is ignored and should be removed.")
+		ac.Log.Warn("SDS support is now always on. The enable_sds configurable is ignored and should be removed")
 	}
 
 	if !allowUnknownConfig {
